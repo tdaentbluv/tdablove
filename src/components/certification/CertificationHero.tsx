@@ -30,7 +30,7 @@ const CertificationHero = () => {
   };
 
   return (
-    <div className="relative h-screen">
+    <div className="relative h-[60vh]">
       {/* Background Image Slider */}
       {backgroundImages.map((image, index) => (
         <div
@@ -55,45 +55,28 @@ const CertificationHero = () => {
             {/* Left Column - Title */}
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                OSHA 10-Hour Safety Training
+                Professional Safety Certifications
               </h1>
               <p className="text-xl text-white mb-8">
-                Essential workplace safety training that meets OSHA requirements and helps create safer work environments
+                Advance your career with industry-recognized safety certifications. Our comprehensive 
+                programs are designed to meet OSHA standards and industry best practices.
               </p>
             </div>
 
             {/* Right Column - Navigation Links */}
             <div className="space-y-4 text-white">
               <button
-                onClick={() => scrollToSection('osha-training')}
-                className="block w-full text-left p-4 hover:bg-white hover:bg-opacity-10 rounded-lg transition-colors"
-              >
-                About OSHA Safety Training
-              </button>
-              <button
-                onClick={() => scrollToSection('certification-benefits')}
-                className="block w-full text-left p-4 hover:bg-white hover:bg-opacity-10 rounded-lg transition-colors"
-              >
-                Benefits of Becoming Certified
-              </button>
-              <button
-                onClick={() => scrollToSection('certification-overview')}
-                className="block w-full text-left p-4 hover:bg-white hover:bg-opacity-10 rounded-lg transition-colors"
-              >
-                Certification Overview
-              </button>
-              <button
                 onClick={() => scrollToSection('certification-levels')}
                 className="block w-full text-left p-4 hover:bg-white hover:bg-opacity-10 rounded-lg transition-colors"
               >
-                Certification Levels
+                View Certifications
               </button>
-              <button
-                onClick={() => scrollToSection('get-certified')}
+              <Link
+                href="/contact"
                 className="block w-full text-left p-4 hover:bg-white hover:bg-opacity-10 rounded-lg transition-colors"
               >
-                Get Certified
-              </button>
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>

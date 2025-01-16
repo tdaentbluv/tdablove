@@ -1,17 +1,15 @@
 import Navigation from '../components/Navigation';
-import Hero from '../components/Hero';
-import Benefit1 from '../components/Benefit1';
-import Benefit2 from '../components/Benefit2';
+import VideoHero from '../components/home/VideoHero';
+import Benefits from '../components/Benefits';
 import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="min-h-screen">
       <Navigation />
-      <Hero />
-      <Benefit1 />
-      <Benefit2 />
+      <VideoHero />
+      <Benefits />
       <CallToAction />
       <Footer />
     </main>

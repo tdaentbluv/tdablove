@@ -2,73 +2,76 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-
-const backgroundImages = [
-  '/images/abstract-bg-1.jpg',
-  '/images/abstract-bg-2.jpg',
-  '/images/abstract-bg-3.jpg',
-  '/images/abstract-bg-4.jpg',
-  '/images/abstract-bg-5.jpg',
-];
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCalendarDays,
+  faUsers,
+  faUserTie,
+  faCheckCircle
+} from '@fortawesome/free-solid-svg-icons';
 
 const AboutHero = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="relative h-screen">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 transition-opacity duration-1000"
-        style={{
-          backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-black opacity-60"></div>
-      </div>
-
+    <section className="relative h-[60vh] bg-white">
       {/* Content */}
       <div className="relative h-full">
         <div className="container mx-auto px-4 h-full">
-          <div className="flex flex-col lg:flex-row items-center justify-between h-full py-20">
+          <div className="flex flex-col lg:flex-row items-center justify-between h-full py-12">
             {/* Left Column - Title */}
-            <div className="lg:w-1/2 text-white mb-12 lg:mb-0">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6">
+            <div className="lg:w-1/2 mb-8 lg:mb-0">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
                 Safety Through Excellence
               </h1>
-              <p className="text-xl mb-8">
+              <p className="text-lg mb-6 text-gray-600">
                 TDA Enterprise LLC - Your trusted partner in occupational safety training and consultation. 
-                Led by OSHA Authorized Trainer Tremayne Anderson, we're committed to creating safer workplaces 
-                through comprehensive training and education.
+                With decades of experience, we deliver comprehensive solutions that protect your workforce 
+                and ensure regulatory compliance.
               </p>
+              <div className="flex space-x-4">
+                <Link 
+                  href="/contact"
+                  className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-md transition duration-300"
+                >
+                  Get Started
+                </Link>
+                <Link
+                  href="/services"
+                  className="border border-primary text-primary px-6 py-2 rounded-md hover:bg-primary hover:text-white transition duration-300"
+                >
+                  Our Services
+                </Link>
+              </div>
             </div>
 
-            {/* Right Column - Navigation Links */}
-            <div className="lg:w-1/2 text-white">
-              <div className="space-y-4">
-                <Link href="#ceo" className="block text-lg hover:text-primary transition-colors">
-                  Meet Our CEO
-                </Link>
-                <Link href="#certifications" className="block text-lg hover:text-primary transition-colors">
-                  Our Certifications
-                </Link>
-                <Link href="#tda" className="block text-lg hover:text-primary transition-colors">
-                  About TDA Enterprise
-                </Link>
-                <Link href="#blove" className="block text-lg hover:text-primary transition-colors">
-                  B Love Foundation
-                </Link>
+            {/* Right Column - Stats */}
+            <div className="lg:w-1/2 grid grid-cols-2 gap-6 text-center">
+              <div className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-primary mb-3">
+                  <FontAwesomeIcon icon={faCalendarDays} className="text-3xl" />
+                </div>
+                <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">25+</div>
+                <div className="text-sm text-gray-600">Years Experience</div>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-primary mb-3">
+                  <FontAwesomeIcon icon={faUsers} className="text-3xl" />
+                </div>
+                <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">1000+</div>
+                <div className="text-sm text-gray-600">Clients Served</div>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-primary mb-3">
+                  <FontAwesomeIcon icon={faUserTie} className="text-3xl" />
+                </div>
+                <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">50+</div>
+                <div className="text-sm text-gray-600">Industry Experts</div>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-primary mb-3">
+                  <FontAwesomeIcon icon={faCheckCircle} className="text-3xl" />
+                </div>
+                <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">100%</div>
+                <div className="text-sm text-gray-600">Success Rate</div>
               </div>
             </div>
           </div>
