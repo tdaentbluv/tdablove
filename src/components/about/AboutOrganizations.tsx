@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import Image from 'next/image';
 
 const AboutOrganizations = () => {
   return (
@@ -8,9 +11,20 @@ const AboutOrganizations = () => {
         <div className="bg-gray-50 rounded-2xl p-8 lg:p-12">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                TDA Enterprise LLC
-              </h2>
+              <div className="flex items-center mb-6">
+                <h2 className="text-3xl font-bold text-gray-900">
+                  TDA Enterprise LLC
+                </h2>
+                <div className="relative w-12 h-12 ml-4">
+                  <Image
+                    src="/TDALogoPNG.png"
+                    alt="TDA Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </div>
               <p className="text-gray-600 mb-6">
                 Founded by Tremayne D. Anderson, OHST, COSS, TDA Enterprise LLC specializes in 
                 occupational safety and health training, with a focus on OSHA compliance and 
@@ -44,11 +58,13 @@ const AboutOrganizations = () => {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="order-2 lg:order-1">
               <div className="relative">
-                <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                  <img
-                    src="/images/blove-foundation.jpg"
-                    alt="B Love Foundation"
-                    className="object-cover w-full h-full"
+                <div className="relative w-72 h-72 mx-auto">
+                  <Image
+                    src="/images/BloveFirstpng.png"
+                    alt="B Love Foundation Logo"
+                    fill
+                    className="object-contain"
+                    priority
                   />
                 </div>
               </div>
@@ -63,7 +79,7 @@ const AboutOrganizations = () => {
                 believe in giving back and creating opportunities for those in need.
               </p>
               <Link
-                href="/blove-foundation"
+                href="/b-love-foundation"
                 className="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors"
               >
                 Learn More About B Love Foundation
