@@ -32,11 +32,11 @@ export default function SignUpPage() {
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <div className="flex justify-center mb-12">
             <Image
-              src="/tda-logo.png"
+              src="/TDALogoPNG.png"
               alt="TDA Enterprise Logo"
               width={200}
               height={80}
-              className="w-auto h-20"
+              className="w-auto h-20 object-contain"
             />
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">

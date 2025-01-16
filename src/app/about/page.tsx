@@ -3,7 +3,6 @@ import AboutHero from '../../components/about/AboutHero';
 import AboutCEO from '../../components/about/AboutCEO';
 import CertificationLevels from '../../components/certification/CertificationLevels';
 import AboutOrganizations from '../../components/about/AboutOrganizations';
-import Footer from '../../components/Footer';
 
 export default function AboutPage() {
   return (
@@ -13,7 +12,6 @@ export default function AboutPage() {
       <AboutCEO />
       <CertificationLevels />
       <AboutOrganizations />
-      <Footer />
     </main>
   );
 }

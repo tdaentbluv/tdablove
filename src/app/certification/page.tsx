@@ -6,7 +6,6 @@ import CertificationOverview from '../../components/certification/CertificationO
 import CertificationLevels from '../../components/certification/CertificationLevels';
 import GetCertified from '../../components/certification/GetCertified';
 import RegisterClasses from '../../components/certification/RegisterClasses';
-import Footer from '../../components/Footer';
 
 export default function CertificationPage() {
   return (
@@ -19,7 +18,6 @@ export default function CertificationPage() {
       <CertificationLevels />
       <GetCertified />
       <RegisterClasses />
-      <Footer />
     </main>
   );
 }

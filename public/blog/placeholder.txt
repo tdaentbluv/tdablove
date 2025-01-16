@@ -1,0 +1,7 @@
+This directory contains blog post images. Please add the following images:
+- heat-safety.jpg
+- waste-management.jpg
+- emergency-response.jpg
+- smart-ppe.jpg
+- chemical-safety.jpg
+- mental-health.jpg
