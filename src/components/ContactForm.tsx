@@ -104,14 +104,28 @@ const ContactForm = () => {
     setErrorMessage('');
 
     try {
-      const response = await sendToSplunk({
+      // Send to Splunk for logging
+      await sendToSplunk({
         ...formData,
         submissionTime: new Date().toISOString(),
         userAgent: navigator.userAgent,
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
+      // Send email through our API route
+      const emailResponse = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          submissionTime: new Date().toISOString(),
+          userAgent: navigator.userAgent,
+        }),
+      });
+
+      if (!emailResponse.ok) {
+        throw new Error('Failed to send email');
       }
 
       setStatus('success');

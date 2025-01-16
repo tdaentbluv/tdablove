@@ -1,15 +1,5 @@
 {
-  "/_not-found": "app/_not-found.js",
-  "/admin/page": "app/admin/page.js",
-  "/calendar/page": "app/calendar/page.js",
-  "/careers/page": "app/careers/page.js",
-  "/b-love-foundation/page": "app/b-love-foundation/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/certification/page": "app/certification/page.js",
-  "/about/page": "app/about/page.js",
+  "/not-found": "app/not-found.js",
   "/page": "app/page.js",
-  "/products/page": "app/products/page.js",
-  "/signin/page": "app/signin/page.js",
-  "/signup/page": "app/signup/page.js",
-  "/contact/page": "app/contact/page.js"
+  "/about/page": "app/about/page.js"
 }
