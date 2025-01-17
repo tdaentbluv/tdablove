@@ -2,11 +2,35 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 const Navigation = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = useCallback((setter: (value: boolean) => void) => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
+    setter(true);
+  }, [closeTimeout]);
+
+  const handleMouseLeave = useCallback((setter: (value: boolean) => void) => {
+    const timeout = setTimeout(() => {
+      setter(false);
+    }, 100);
+    setCloseTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeout) {
+        clearTimeout(closeTimeout);
+      }
+    };
+  }, [closeTimeout]);
 
   return (
     <>
@@ -42,8 +66,8 @@ const Navigation = () => {
                 <div className="relative">
                   <button
                     className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors flex items-center"
-                    onMouseEnter={() => setIsServicesOpen(true)}
-                    onMouseLeave={() => setIsServicesOpen(false)}
+                    onMouseEnter={() => handleMouseEnter(setIsServicesOpen)}
+                    onMouseLeave={() => handleMouseLeave(setIsServicesOpen)}
                   >
                     Services
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,9 +76,9 @@ const Navigation = () => {
                   </button>
                   {isServicesOpen && (
                     <div
-                      className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
-                      onMouseEnter={() => setIsServicesOpen(true)}
-                      onMouseLeave={() => setIsServicesOpen(false)}
+                      className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50"
+                      onMouseEnter={() => handleMouseEnter(setIsServicesOpen)}
+                      onMouseLeave={() => handleMouseLeave(setIsServicesOpen)}
                     >
                       <div className="py-1">
                         <Link href="/products" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
@@ -75,8 +99,8 @@ const Navigation = () => {
                 <div className="relative">
                   <button
                     className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors flex items-center"
-                    onMouseEnter={() => setIsResourcesOpen(true)}
-                    onMouseLeave={() => setIsResourcesOpen(false)}
+                    onMouseEnter={() => handleMouseEnter(setIsResourcesOpen)}
+                    onMouseLeave={() => handleMouseLeave(setIsResourcesOpen)}
                   >
                     Resources
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,9 +109,9 @@ const Navigation = () => {
                   </button>
                   {isResourcesOpen && (
                     <div
-                      className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
-                      onMouseEnter={() => setIsResourcesOpen(true)}
-                      onMouseLeave={() => setIsResourcesOpen(false)}
+                      className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50"
+                      onMouseEnter={() => handleMouseEnter(setIsResourcesOpen)}
+                      onMouseLeave={() => handleMouseLeave(setIsResourcesOpen)}
                     >
                       <div className="py-1">
                         <Link href="/blog" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
