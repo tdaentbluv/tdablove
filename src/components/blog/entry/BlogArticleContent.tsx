@@ -11,11 +11,17 @@ const BlogArticleContent = ({ article }: Props) => {
     <article className="py-16">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="prose prose-lg prose-blue mx-auto">
-          <ReactMarkdown>{article.content}</ReactMarkdown>
+          <div className="space-y-8 text-gray-600 [&>p]:indent-6 leading-relaxed">
+            {article.content.split('\n\n').map((paragraph, index) => (
+              <p key={index} className="text-base sm:text-lg">
+                {paragraph.trim()}
+              </p>
+            ))}
+          </div>
         </div>
         <div className="mt-16 pt-8 border-t border-gray-200">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-2">
               {article.tags.map((tag) => (
                 <span
                   key={tag}
@@ -25,7 +31,7 @@ const BlogArticleContent = ({ article }: Props) => {
                 </span>
               ))}
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center gap-4">
               <button
                 type="button"
                 className="rounded-full bg-white px-2.5 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
