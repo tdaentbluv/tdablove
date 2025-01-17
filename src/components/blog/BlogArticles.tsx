@@ -11,8 +11,7 @@ const blogPosts = [
     date: 'Jan 15, 2025',
     readTime: '8 min read',
     author: 'Dr. Sarah Johnson',
-    category: 'Safety Regulations',
-    image: '/blog/heat-safety.jpg'
+    category: 'Safety Regulations'
   },
   {
     id: 2,
@@ -21,8 +20,7 @@ const blogPosts = [
     date: 'Jan 12, 2025',
     readTime: '6 min read',
     author: 'Michael Chen',
-    category: 'Environmental',
-    image: '/blog/waste-management.jpg'
+    category: 'Environmental'
   },
   {
     id: 3,
@@ -31,8 +29,7 @@ const blogPosts = [
     date: 'Jan 10, 2025',
     readTime: '10 min read',
     author: 'Robert Martinez',
-    category: 'Emergency Preparedness',
-    image: '/blog/emergency-response.jpg'
+    category: 'Emergency Preparedness'
   },
   {
     id: 4,
@@ -41,8 +38,7 @@ const blogPosts = [
     date: 'Jan 8, 2025',
     readTime: '7 min read',
     author: 'Dr. Emily Parker',
-    category: 'Technology',
-    image: '/blog/smart-ppe.jpg'
+    category: 'Technology'
   },
   {
     id: 5,
@@ -51,8 +47,7 @@ const blogPosts = [
     date: 'Jan 5, 2025',
     readTime: '9 min read',
     author: 'James Wilson',
-    category: 'Chemical Safety',
-    image: '/blog/chemical-safety.jpg'
+    category: 'Chemical Safety'
   },
   {
     id: 6,
@@ -61,8 +56,7 @@ const blogPosts = [
     date: 'Jan 3, 2025',
     readTime: '5 min read',
     author: 'Dr. Lisa Thompson',
-    category: 'Health & Wellness',
-    image: '/blog/mental-health.jpg'
+    category: 'Health & Wellness'
   }
 ];
 
@@ -74,14 +68,15 @@ const BlogArticles = () => {
           <div className="grid gap-8 lg:grid-cols-2">
             {blogPosts.map((post) => (
               <article key={post.id} className="relative isolate flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg">
-                <div className="relative aspect-[16/9] sm:aspect-[2/1]">
+                <div className="relative aspect-[16/9] sm:aspect-[2/1] bg-gray-100">
                   <Image
-                    src={post.image}
+                    src="/TDALogoPNG.png"
                     alt={post.title}
                     fill
-                    className="object-cover"
+                    className="object-contain p-4"
+                    priority={post.id === 1}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-gray-900/0" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-gray-900/0" />
                 </div>
                 <div className="flex flex-1 flex-col justify-between p-6">
                   <div className="flex-1">
