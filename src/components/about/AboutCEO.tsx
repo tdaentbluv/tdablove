@@ -1,3 +1,6 @@
+import React from 'react';
+import Image from 'next/image';
+
 const AboutCEO = () => {
   return (
     <section id="ceo" className="py-20 bg-white">
@@ -6,10 +9,12 @@ const AboutCEO = () => {
           {/* Image Column */}
           <div className="relative">
             <div className="aspect-w-4 aspect-h-5 rounded-lg overflow-hidden">
-              <img
+              <Image
                 src="/images/TremayneAnderson.jpeg"
                 alt="Tremayne D. Anderson - CEO of TDA Enterprise LLC"
-                className="object-cover w-full h-full"
+                fill
+                style={{ objectFit: 'cover' }}
+                className="rounded-lg"
               />
             </div>
           </div>

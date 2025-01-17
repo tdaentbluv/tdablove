@@ -91,7 +91,7 @@ const benefitsData: BenefitItem[] = [
 ];
 
 const Benefits = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <section className="py-16 bg-gray-50">
@@ -110,7 +110,7 @@ const Benefits = () => {
             <div
               key={index}
               className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-              onMouseEnter={() => setActiveIndex(index)}
+              onMouseEnter={() => setCurrentIndex(index)}
             >
               <div className="flex items-center justify-center w-12 h-12 mx-auto bg-primary rounded-md">
                 <svg
