@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 const ServicesHero = () => {
   return (
@@ -24,7 +23,7 @@ const ServicesHero = () => {
                   Explore Our Services
                 </a>
                 <a href="/contact" className="text-sm font-semibold leading-6 text-gray-900">
-                  Contact Us <span aria-hidden="true">→</span>
+                  Contact Us
                 </a>
               </div>
             </div>
@@ -32,32 +31,9 @@ const ServicesHero = () => {
         </div>
         <div className="mt-20 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen">
           <div className="absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-white shadow-xl shadow-blue-600/10 ring-1 ring-blue-50 md:-mr-20 lg:-mr-36" />
-          <div className="shadow-lg md:rounded-3xl">
-            <div className="bg-blue-500 [clip-path:inset(0)] md:[clip-path:inset(0_round_theme(borderRadius.3xl))]">
-              <div className="absolute -inset-y-px left-1/2 -z-10 ml-10 w-[200%] skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-inset ring-white md:ml-20 lg:ml-36" />
-              <div className="relative px-6 pt-8 sm:pt-16 md:pl-16 md:pr-0">
-                <div className="mx-auto max-w-2xl md:mx-0 md:max-w-none">
-                  <div className="w-screen overflow-hidden rounded-tl-xl bg-gray-900">
-                    <div className="flex bg-gray-800/40 ring-1 ring-white/5">
-                      <div className="-mb-px flex text-sm font-medium leading-6 text-gray-400">
-                        <div className="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">
-                          Services Overview
-                        </div>
-                      </div>
-                    </div>
-                    <div className="px-6 pb-14 pt-6">
-                      <Image
-                        src="/TDALogoPNG.png"
-                        alt="TDA Services"
-                        width={1000}
-                        height={600}
-                        className="w-full rounded-md bg-white/5 ring-1 ring-white/10"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="relative h-[400px] w-full overflow-hidden rounded-2xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-white opacity-75" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent" />
           </div>
         </div>
       </div>

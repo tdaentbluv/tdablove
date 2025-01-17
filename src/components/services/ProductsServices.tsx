@@ -1,8 +1,7 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
-const services = [
+export const services = [
   {
     title: 'Environmental Services',
     description: 'Comprehensive environmental management solutions to ensure compliance and sustainability.',
@@ -83,23 +82,12 @@ const ProductsServices = () => {
           {services.map((service, index) => (
             <div key={service.title} className="flex flex-col">
               <div className="rounded-2xl border border-gray-200 bg-white shadow-sm ring-1 ring-gray-200/50">
-                <div className="relative">
-                  <div className="relative h-48 overflow-hidden rounded-t-2xl">
-                    <Image
-                      src="/TDALogoPNG.png"
-                      alt={service.title}
-                      fill
-                      className="object-contain p-4"
-                    />
-                  </div>
-                  <div className="absolute inset-0 rounded-t-2xl bg-gradient-to-b from-gray-900/50 to-gray-900/0" />
-                  <div className="absolute top-4 left-4">
+                <div className="p-6">
+                  <div className="mb-4">
                     <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
                       {`Service ${index + 1}`}
                     </span>
                   </div>
-                </div>
-                <div className="p-6">
                   <h3 className="text-2xl font-bold leading-8 tracking-tight text-gray-900">
                     {service.title}
                   </h3>

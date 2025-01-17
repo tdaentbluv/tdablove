@@ -51,7 +51,7 @@ const Navigation = () => {
               </div>
               <div className="flex flex-col ml-3">
                 <span className="text-lg font-bold tracking-tight text-gray-900">TDA Enterprise</span>
-                <span className="text-sm text-gray-600">Safety First</span>
+                <span className="text-sm text-gray-600">Safety Through Excellence</span>
               </div>
             </Link>
 
