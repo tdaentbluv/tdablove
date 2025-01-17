@@ -13,19 +13,19 @@ const Navigation = () => {
       {/* Navigation Bar */}
       <nav className="fixed w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-24">
             {/* Logo */}
-            <Link href="/" className="flex items-center rounded-lg py-3">
-              <div className="relative w-20 h-20">
+            <Link href="/" className="flex items-center py-2">
+              <div className="relative w-16 h-16">
                 <Image
                   src="/TDALogoPNG.png"
                   alt="TDA Logo"
                   fill
-                  className="object-contain rounded-lg"
+                  className="object-contain"
                   priority
                 />
               </div>
-              <div className="flex flex-col ml-4">
+              <div className="flex flex-col ml-3">
                 <span className="text-lg font-bold tracking-tight text-gray-900">TDA Enterprise</span>
                 <span className="text-sm text-gray-600">Safety First</span>
               </div>
@@ -33,7 +33,7 @@ const Navigation = () => {
 
             {/* Navigation Links */}
             <div className="hidden md:flex items-center">
-              <div className="flex space-x-6 mr-4">
+              <div className="flex space-x-8 mr-6">
                 <Link href="/about" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
                   About
                 </Link>
