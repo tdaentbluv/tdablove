@@ -1,3 +1,6 @@
+import React from 'react';
+import Image from 'next/image';
+
 const CertificationLogos = () => {
   return (
     <section id="certifications" className="py-16 bg-gray-50">
@@ -6,33 +9,40 @@ const CertificationLogos = () => {
           Our Certifications & Partnerships
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center">
-          {/* Replace these with actual certification logos */}
-          <div className="w-40 h-40 bg-white rounded-lg shadow-md flex items-center justify-center p-4">
-            <img
-              src="/images/cert-logo-1.png"
-              alt="OSHA Certification"
-              className="max-w-full max-h-full object-contain"
+          <div className="relative w-full h-[100px]">
+            <Image
+              src="/images/certifications/cert1.png"
+              alt="Certification 1"
+              fill
+              style={{ objectFit: 'contain' }}
+              className="hover:opacity-80 transition-opacity"
             />
           </div>
-          <div className="w-40 h-40 bg-white rounded-lg shadow-md flex items-center justify-center p-4">
-            <img
-              src="/images/cert-logo-2.png"
-              alt="Safety Certification"
-              className="max-w-full max-h-full object-contain"
+          <div className="relative w-full h-[100px]">
+            <Image
+              src="/images/certifications/cert2.png"
+              alt="Certification 2"
+              fill
+              style={{ objectFit: 'contain' }}
+              className="hover:opacity-80 transition-opacity"
             />
           </div>
-          <div className="w-40 h-40 bg-white rounded-lg shadow-md flex items-center justify-center p-4">
-            <img
-              src="/images/cert-logo-3.png"
-              alt="Training Certification"
-              className="max-w-full max-h-full object-contain"
+          <div className="relative w-full h-[100px]">
+            <Image
+              src="/images/certifications/cert3.png"
+              alt="Certification 3"
+              fill
+              style={{ objectFit: 'contain' }}
+              className="hover:opacity-80 transition-opacity"
             />
           </div>
-          <div className="w-40 h-40 bg-white rounded-lg shadow-md flex items-center justify-center p-4">
-            <img
-              src="/images/cert-logo-4.png"
-              alt="Industry Certification"
-              className="max-w-full max-h-full object-contain"
+          <div className="relative w-full h-[100px]">
+            <Image
+              src="/images/certifications/cert4.png"
+              alt="Certification 4"
+              fill
+              style={{ objectFit: 'contain' }}
+              className="hover:opacity-80 transition-opacity"
             />
           </div>
         </div>

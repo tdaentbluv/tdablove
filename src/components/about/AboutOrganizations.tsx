@@ -41,10 +41,12 @@ const AboutOrganizations = () => {
             </div>
             <div className="relative">
               <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                <img
+                <Image
                   src="/images/tda-enterprise.jpg"
                   alt="TDA Enterprise"
-                  className="object-cover w-full h-full"
+                  fill
+                  className="object-cover"
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
             </div>

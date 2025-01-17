@@ -9,6 +9,7 @@ import {
   faArrowTrendUp
 } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import { escapeApostrophe } from '@/utils/textUtils';
 
 export default function ProductsPage() {
   return (
@@ -159,11 +160,10 @@ export default function ProductsPage() {
       <section className="bg-primary py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Transform Your EHS Operations?
+            {escapeApostrophe("TDA Enterprise's Products")}
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join the future of Environmental Health & Safety with TDA EHS AI. 
-            Schedule a demo to see how we can revolutionize your operations.
+            {escapeApostrophe("We're committed to providing high-quality products that meet the unique needs of your business.")}
           </p>
           <Link 
             href="/contact"
@@ -171,6 +171,9 @@ export default function ProductsPage() {
           >
             Schedule Demo
           </Link>
+          <p className="text-lg mb-4">
+            {escapeApostrophe("Don't hesitate to reach out to our team to learn more about our products and services.")}
+          </p>
         </div>
       </section>
     </main>

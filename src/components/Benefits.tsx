@@ -91,7 +91,7 @@ const benefitsData: BenefitItem[] = [
 ];
 
 const Benefits = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <section className="py-16 bg-gray-50">
@@ -109,8 +109,11 @@ const Benefits = () => {
           {benefitsData.map((benefit, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-              onMouseEnter={() => setCurrentIndex(index)}
+              className={`bg-white rounded-lg shadow-lg p-6 transition-shadow duration-300 ${
+                hoveredIndex === index ? 'shadow-xl' : ''
+              }`}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="flex items-center justify-center w-12 h-12 mx-auto bg-primary rounded-md">
                 <svg
